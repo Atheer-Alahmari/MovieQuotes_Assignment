@@ -7,19 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9734E11727722D7B00B9FEEB /* Movie_CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9734E11627722D7B00B9FEEB /* Movie_CollectionViewCell.swift */; };
+		9734E11C2772358C00B9FEEB /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 9734E11B2772358C00B9FEEB /* Kingfisher */; };
+		9734E11E27725C5000B9FEEB /* QuotationQuiz_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9734E11D27725C5000B9FEEB /* QuotationQuiz_ViewController.swift */; };
 		978127642771E5A0006A2A0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978127632771E5A0006A2A0C /* AppDelegate.swift */; };
 		978127662771E5A0006A2A0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978127652771E5A0006A2A0C /* SceneDelegate.swift */; };
-		978127682771E5A0006A2A0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978127672771E5A0006A2A0C /* ViewController.swift */; };
+		978127682771E5A0006A2A0C /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 978127672771E5A0006A2A0C /* CollectionViewController.swift */; };
 		9781276B2771E5A0006A2A0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 978127692771E5A0006A2A0C /* Main.storyboard */; };
 		9781276D2771E5A1006A2A0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9781276C2771E5A1006A2A0C /* Assets.xcassets */; };
 		978127702771E5A1006A2A0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9781276E2771E5A1006A2A0C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9734E11627722D7B00B9FEEB /* Movie_CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie_CollectionViewCell.swift; sourceTree = "<group>"; };
+		9734E11D27725C5000B9FEEB /* QuotationQuiz_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationQuiz_ViewController.swift; sourceTree = "<group>"; };
 		978127602771E5A0006A2A0C /* MovieQuotes_Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieQuotes_Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		978127632771E5A0006A2A0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		978127652771E5A0006A2A0C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		978127672771E5A0006A2A0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		978127672771E5A0006A2A0C /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		9781276A2771E5A0006A2A0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9781276C2771E5A1006A2A0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9781276F2771E5A1006A2A0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9734E11C2772358C00B9FEEB /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,7 +64,9 @@
 			children = (
 				978127632771E5A0006A2A0C /* AppDelegate.swift */,
 				978127652771E5A0006A2A0C /* SceneDelegate.swift */,
-				978127672771E5A0006A2A0C /* ViewController.swift */,
+				978127672771E5A0006A2A0C /* CollectionViewController.swift */,
+				9734E11627722D7B00B9FEEB /* Movie_CollectionViewCell.swift */,
+				9734E11D27725C5000B9FEEB /* QuotationQuiz_ViewController.swift */,
 				978127692771E5A0006A2A0C /* Main.storyboard */,
 				9781276C2771E5A1006A2A0C /* Assets.xcassets */,
 				9781276E2771E5A1006A2A0C /* LaunchScreen.storyboard */,
@@ -83,6 +91,9 @@
 			dependencies = (
 			);
 			name = MovieQuotes_Assignment;
+			packageProductDependencies = (
+				9734E11B2772358C00B9FEEB /* Kingfisher */,
+			);
 			productName = MovieQuotes_Assignment;
 			productReference = 978127602771E5A0006A2A0C /* MovieQuotes_Assignment.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +122,9 @@
 				Base,
 			);
 			mainGroup = 978127572771E5A0006A2A0C;
+			packageReferences = (
+				9734E11A2772358C00B9FEEB /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 978127612771E5A0006A2A0C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,9 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				978127682771E5A0006A2A0C /* ViewController.swift in Sources */,
+				978127682771E5A0006A2A0C /* CollectionViewController.swift in Sources */,
 				978127642771E5A0006A2A0C /* AppDelegate.swift in Sources */,
+				9734E11E27725C5000B9FEEB /* QuotationQuiz_ViewController.swift in Sources */,
 				978127662771E5A0006A2A0C /* SceneDelegate.swift in Sources */,
+				9734E11727722D7B00B9FEEB /* Movie_CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +310,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -321,6 +338,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -358,6 +376,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9734E11A2772358C00B9FEEB /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9734E11B2772358C00B9FEEB /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9734E11A2772358C00B9FEEB /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 978127582771E5A0006A2A0C /* Project object */;
 }

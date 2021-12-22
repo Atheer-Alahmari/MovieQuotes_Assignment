@@ -8,97 +8,93 @@
 import UIKit
 
 class QuotationQuiz_ViewController: UIViewController {
-    var listOf_NI :[[String]]?
-    //  listOf_Q += [[ item[0],item[1] ]]
-    var currentQuestion = 0
-    let listOf_Q = [
-        ("Frozen","Let it go! Let it go! Can't hold it back anymore!"),
-        
-        ("Toy Story","To infinity and beyond!"),
-        
-        ("Lion King","Hakuna Matata, ain't no passing craze.\n It means no worries for the rest of your days.\n It's our problem-free philosophy. \n Hakuna Matata."),
-        
-        ("Luca", "Silenzio Bruno!"),
-
-        ("Atlantis","You think it's some kind of a diamond. I thought it was some kind of a battery, but we're both wrong. It's their life-force. That crystal is the only thing keeping these people alive! You take that away, and they'll die!"),
-
-        ("Cendrilla","Oh, it's a beautiful dress! Did you ever see such a beautiful dress? And look! Glass slippers. Why, it's like a dream. A wonderful dream come true."),
-        ("Snow White","Magic Mirror on the wall, My mirror O my mirror who is the fairest one of all?")
-
-    ]
-
     
     @IBOutlet weak var answer_TF: UITextField!
     @IBOutlet weak var quotation_Label: UILabel!
-    @IBOutlet weak var image_CorrectAns: UIImageView!
     @IBOutlet weak var score_Label: UILabel!
+    
+    var listOf_NI_Q : [[String]]?
+    var currentQuestion = 0
     var score = 0
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.hidesBackButton = true
+        print(listOf_NI_Q!.count)
         updateUI()
-        // Do any additional setup after loading the view.
-        print(listOf_Q)
     }
     
+    // MARK: ---------------------------------All Action ------------------------------------------
+    
+    //--------------showAnswer_Action
+    
     @IBAction func showAnswer_Action(_ sender: UIButton) {
-        
-        let alertVC = UIAlertController.init(title: "Show Answer" , message: "You will lose a point on your score", preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction.init(title: "Go Back", style: .cancel, handler: nil))
-        alertVC.addAction(UIAlertAction.init(title: "Show Answer", style: .cancel, handler: {UIActionHandler in
+        if(currentQuestion < listOf_NI_Q!.count){
+           
+        let alertVC = UIAlertController.init(title: "Show Answer" , message: "You will lose a point on your score", preferredStyle: .alert )
+        alertVC.addAction(UIAlertAction.init(title: "Go Back", style: .default, handler: nil))
+        alertVC.addAction(UIAlertAction.init(title: "Show Answer", style: .default, handler: {UIActionHandler in
             
             self.show_Answer()
         }))
+            
         self.present(alertVC, animated: true, completion: nil)
-        image_CorrectAns.isHidden = true
-        updateUI()
+        }
     }
     
-    func show_Answer(){
-        image_CorrectAns.isHidden = false
-        let item = listOf_NI![currentQuestion]
-        let url = URL.init(string:item[1])
-           image_CorrectAns.kf.setImage(with: url)
-             
-        
-        
-        
-    }
+    //----------------------checkAnswer_Action
     @IBAction func checkAnswer_Action(_ sender: UIButton) {
-        
-        if answer_TF.text?.lowercased() ==  listOf_Q[currentQuestion].0.lowercased(){
+        if(currentQuestion < listOf_NI_Q!.count){
+
+        if answer_TF.text?.lowercased() ==  listOf_NI_Q![currentQuestion][0].lowercased(){
             score += 1
-            let alertVC = UIAlertController.init(title: "\(answer_TF.text) is Correct Answer" , message: "", preferredStyle: .alert)
+            score_Label.text = "Score : \(score)"
+            let alertVC = UIAlertController.init(title: "\(answer_TF.text!) is Correct Answer" , message: "", preferredStyle: .alert)
             alertVC.addAction(UIAlertAction.init(title: "ok", style: .cancel, handler: nil))
             self.present(alertVC, animated: true, completion: nil)
-            if(currentQuestion < listOf_Q.count-1){
                 currentQuestion += 1
-            }
-            else{
-                currentQuestion = 0
-            }
-            
             updateUI()
+            
+            }else {
+                let alertVC = UIAlertController.init(title: "Try Againr" , message: "", preferredStyle: .alert)
+                alertVC.addAction(UIAlertAction.init(title: "ok", style: .cancel, handler: nil))
+                self.present(alertVC, animated: true, completion: nil)
+                answer_TF.text = ""
+            }
         }
-        else {
-            let alertVC = UIAlertController.init(title: "Try Againr" , message: "", preferredStyle: .alert)
-            alertVC.addAction(UIAlertAction.init(title: "ok", style: .cancel, handler: nil))
-            self.present(alertVC, animated: true, completion: nil)
-        }
-        
-        
-        
-        
-        
-        // else set currentQuestion to 0
        
     
     }
+    
+    // -------------------backToMovies_Action
+    @IBAction func backToMovies_Action(_ sender: UIButton) {
+         navigationController?.popViewController(animated: true)
+
+    }
+    
+   //MARK: --------------------------functions-----------------------------
+    
+    func show_Answer(){
+
+        let QuotationQuiz_VC = self.storyboard!.instantiateViewController(withIdentifier:"ImageAnswer_ViewController") as! ImageAnswer_ViewController
+        
+        
+        let item = listOf_NI_Q![currentQuestion]
+            QuotationQuiz_VC.linkImage_CorrectAns = item[1]
+        self.navigationController?.pushViewController( QuotationQuiz_VC, animated: true)
+        currentQuestion += 1
+        updateUI()
+
+    }
+    
     func updateUI() {
         
-   
-        quotation_Label.text = listOf_Q[currentQuestion].1
-        // set answerLabel's text to equal quizBank[currentQuestion].1
-        
+        answer_TF.text = ""
+        if(currentQuestion < listOf_NI_Q!.count){
+        quotation_Label.text = listOf_NI_Q![currentQuestion][2]
+        }
     }
+    
     
 }
